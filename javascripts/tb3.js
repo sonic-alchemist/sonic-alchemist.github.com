@@ -10,7 +10,7 @@ function preloadImages() {
 	i2.src = url+"button_on.png";
 	}
 
-//Change the Button Image on selection
+//Change the Button Image on click
 
 function buttonDepress (var1) {
 	
@@ -312,7 +312,7 @@ function soundsSelect (var2) {
 		if (state4_5 == 0) {
 			document.getElementById(var2).src = url+"button_on.png";
 			state4_5 = 1;
-			oh5p = 'setTimeout( "oh5.play()", tempo*4 )';
+			oh5p = 'setTimeout( "oh5.play()", tempo*4.2 )';
 			}
 		else {
 			document.getElementById(var2).src = url+"buttonblue_v2.png";
@@ -464,8 +464,6 @@ var interVal = "";
 function activateButton() {
 	
 	document.getElementById("runButton").src = "img/rungridactivated.png";
-	document.getElementById("tempoValue").disabled = true;
-		document.getElementById("tempoValue").style.color = "#777777";
 		setTimeout("singlePlay()" , 0 );
 		interVal = setInterval( "singlePlay()", tempo*16 );
 	}
@@ -474,8 +472,6 @@ function activateButton() {
 function stopButton() {
 	
 	document.getElementById("runButton").src = "";
-	document.getElementById("tempoValue").disabled = false;
-		document.getElementById("tempoValue").style.color = "";
 		clearInterval(interVal);
 	document.getElementById("ambaudio").innerHTML="<embed src='' autostart=true loop=false volume=0 hidden=true>";
 	return false;
@@ -632,102 +628,7 @@ function singlePlay() {
 	eval(oh16p);
 	}
 
-//Background Sounds
-	
-function playSound(soundfile) {
-  document.getElementById("ambaudio").innerHTML=
-    "<embed src=\""+soundfile+"\" hidden=\"true\" autostart=\"true\" loop=\"false\" />";
-}setTimeout("document.getElementById('imgl-4').src = url+'light-off.png'", tempo*4 );
-	setTimeout("document.getElementById('imgl-5').src = url+'light-on.png'", tempo*4 );
-	setTimeout("document.getElementById('imgl-5').src = url+'light-off.png'", tempo*5 );
-	setTimeout("document.getElementById('imgl-6').src = url+'light-on.png'", tempo*5 );
-	setTimeout("document.getElementById('imgl-6').src = url+'light-off.png'", tempo*6 );
-	setTimeout("document.getElementById('imgl-7').src = url+'light-on.png'", tempo*6 );
-	setTimeout("document.getElementById('imgl-7').src = url+'light-off.png'", tempo*7 );
-	setTimeout("document.getElementById('imgl-8').src = url+'light-on.png'", tempo*7 );
-	setTimeout("document.getElementById('imgl-8').src = url+'light-off.png'", tempo*8 );
-	setTimeout("document.getElementById('imgl-9').src = url+'light-on.png'", tempo*8 );
-	setTimeout("document.getElementById('imgl-9').src = url+'light-off.png'", tempo*9 );
-	setTimeout("document.getElementById('imgl-10').src = url+'light-on.png'", tempo*9 );
-	setTimeout("document.getElementById('imgl-10').src = url+'light-off.png'", tempo*10 );
-	setTimeout("document.getElementById('imgl-11').src = url+'light-on.png'", tempo*10 );
-	setTimeout("document.getElementById('imgl-11').src = url+'light-off.png'", tempo*11 );
-	setTimeout("document.getElementById('imgl-12').src = url+'light-on.png'", tempo*11 );
-	setTimeout("document.getElementById('imgl-12').src = url+'light-off.png'", tempo*12 );
-	setTimeout("document.getElementById('imgl-13').src = url+'light-on.png'", tempo*12 );
-	setTimeout("document.getElementById('imgl-13').src = url+'light-off.png'", tempo*13 );
-	setTimeout("document.getElementById('imgl-14').src = url+'light-on.png'", tempo*13 );
-	setTimeout("document.getElementById('imgl-14').src = url+'light-off.png'", tempo*14 );
-	setTimeout("document.getElementById('imgl-15').src = url+'light-on.png'", tempo*14 );
-	setTimeout("document.getElementById('imgl-15').src = url+'light-off.png'", tempo*15 );
-	setTimeout("document.getElementById('imgl-16').src = url+'light-on.png'", tempo*15 );
-	setTimeout("document.getElementById('imgl-16').src = url+'light-off.png'", tempo*16-1 );
-	
-	eval(b1p);
-	eval(s1p);
-	eval(ch1p);
-	eval(oh1p);
-	eval(b2p);
-	eval(s2p);
-	eval(ch2p);
-	eval(oh2p);
-	eval(b3p);
-	eval(s3p);
-	eval(ch3p);
-	eval(oh3p);
-	eval(b4p);
-	eval(s4p);
-	eval(ch4p);
-	eval(oh4p);
-	eval(b5p);
-	eval(s5p);
-	eval(ch5p);
-	eval(oh5p);
-	eval(b6p);
-	eval(s6p);
-	eval(ch6p);
-	eval(oh6p);
-	eval(b7p);
-	eval(s7p);
-	eval(ch7p);
-	eval(oh7p);
-	eval(b8p);
-	eval(s8p);
-	eval(ch8p);
-	eval(oh8p);
-	eval(b9p);
-	eval(s9p);
-	eval(ch9p);
-	eval(oh9p);
-	eval(b10p);
-	eval(s10p);
-	eval(ch10p);
-	eval(oh10p);
-	eval(b11p);
-	eval(s11p);
-	eval(ch11p);
-	eval(oh11p);
-	eval(b12p);
-	eval(s12p);
-	eval(ch12p);
-	eval(oh12p);
-	eval(b13p);
-	eval(s13p);
-	eval(ch13p);
-	eval(oh13p);
-	eval(b14p);
-	eval(s14p);
-	eval(ch14p);
-	eval(oh14p);
-	eval(b15p);
-	eval(s15p);
-	eval(ch15p);
-	eval(oh15p);
-	eval(b16p);
-	eval(s16p);
-	eval(ch16p);
-	eval(oh16p);
-	}
+//Background Sounds - Identifies the id "ambaudio" and modifies the audio file source to match the specified file name
 	
 function playSound(soundfile) {
   document.getElementById("ambaudio").innerHTML=
