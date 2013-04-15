@@ -1,6 +1,6 @@
 // JavaScript Document
 
-var url = "img/";
+var url = "images/img/";
 
 function preloadImages() {
 	
@@ -463,7 +463,7 @@ var interVal = "";
 
 function activateButton() {
 	
-	document.getElementById("runButton").src = "img/rungridactivated.png";
+	document.getElementById("runButton").src = "images/img/rungridactivated.png";
 	document.getElementById("tempoValue").disabled = true;
 		document.getElementById("tempoValue").style.color = "#777777";
 		setTimeout("singlePlay()" , 0 );
