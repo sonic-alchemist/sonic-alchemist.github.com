@@ -1,6 +1,6 @@
 // JavaScript Document
 
-var url = "https://github.com/sonic-alchemist/sonic-alchemist.github.com/tree/gh-pages/images/img";
+var url = "https://github.com/sonic-alchemist/sonic-alchemist.github.com/tree/gh-pages/images/img/";
 
 function preloadImages() {
 	
