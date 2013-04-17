@@ -1,0 +1,210 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>SonicAlchemist</title>
+
+<link rel="SHORTCUT ICON"
+       href="SoundAlchemistLogoConcept.png">
+<script src="tb3.js" type="text/javascript" charset="utf-8"></script>
+<link rel="stylesheet" href="ss3.css" type="text/css" media="screen" />
+</head>
+
+<body onLoad="preloadImages()">
+
+<div id="banner">
+<h1>SonicAlchemist <img id="logo" src="SoundAlchemistLogoConcept.png" height=50px /></h1>
+<div><img id="activate" src="img/run.png" alt="START" onclick="activateButton('runButton');" /><br></div>
+<div><img id="deactivate" src="img/stop.png" alt="STOP" onclick="stopButton('runButton');" /><br></div>
+
+<a href="https://soundcloud.com/sonicalchemistuk" target="_blank"><img id="soundcloud" src="img/80x50_orange.png" /></a>
+<a href="https://twitter.com/SonicAlchemist1" target="_blank"><img id="twitter" src="img/twitter-bird-white-on-blue.png" /></a>
+</div>
+<!--Container-->
+<div id="container">
+
+<!--Backgrounds-->
+<span id="ambaudio"></span>
+<!--Fire recording by SGAK - http://www.freesound.org/people/SGAK/sounds/87564/. Used under Creative Commons 0 License-->
+<a href="#a" onClick=playSound('audio/wav/fire_ambiance.wav')><img id="fire" src="img/fire_off.png" /></a> <!--Fire Image Copyright muratart, 2013. Used under license from Shutterstock.com-->
+<a href="#b" onClick=playSound('audio/wav/water_ambiance.wav')><img id="water" src="img/water_off.png" /></a>
+<a href="#c" onClick=playSound('audio/wav/earth_ambiance.wav')><img id="earth" src="img/earth_off.png" /></a>
+<a href="#a" onClick=playSound('audio/wav/wind_ambiance.wav')><img id="air" src="img/air_off.png" /></a>
+<!--Frame Images Copyright StudioSmart, 2013. Used under license from Shutterstock.com-->
+
+<!--SoundSelectors-->
+<div id="soundselect">
+
+<!--Frame-->
+<div id="frame">
+<img id="frame1" src="img/frame_off.png" /> <!--Frame Image Copyright StudioSmart, 2013. Used under license from Shutterstock.com-->
+</div>
+<!--Buttons-->
+<div id="1"><img id="img4-1" src="img/buttonblue_v2.png" alt="button" onMouseDown="buttonDepress('img4-1')" onMouseUp="soundsSelect('img4-1')" /></div>
+
+<div id="2"><img id="img4-2" src="img/buttonblue_v2.png" alt="button" onMouseDown="buttonDepress('img4-2')" onMouseUp="soundsSelect('img4-2')" /></div>
+<div id="3"><img id="img4-3" src="img/buttonblue_v2.png" alt="button" onMouseDown="buttonDepress('img4-3')" onMouseUp="soundsSelect('img4-3')" /></div>
+
+<div id="4"><img id="img4-4" src="img/buttonblue_v2.png" alt="button" onMouseDown="buttonDepress('img4-4')" onMouseUp="soundsSelect('img4-4')" /></div>
+<div id="5"><img id="img4-5" src="img/buttonblue_v2.png" alt="button" onMouseDown="buttonDepress('img4-5')" onMouseUp="soundsSelect('img4-5')" /></div>
+<div id="6"><img id="img4-6" src="img/buttonblue_v2.png" alt="button" onMouseDown="buttonDepress('img4-6')" onMouseUp="soundsSelect('img4-6')" /></div>
+
+<div id="7"><img id="img4-7" src="img/buttonblue_v2.png" alt="button" onMouseDown="buttonDepress('img4-7')" onMouseUp="soundsSelect('img4-7')" /></div>
+<div id="8"><img id="img4-8" src="img/buttonblue_v2.png" alt="button" onMouseDown="buttonDepress('img4-8')" onMouseUp="soundsSelect('img4-8')" /></div>
+<div id="9"><img id="img4-9" src="img/buttonblue_v2.png" alt="button" onMouseDown="buttonDepress('img4-9')" onMouseUp="soundsSelect('img4-9')" /></div>
+<div id="10"><img id="img4-10" src="img/buttonblue_v2.png" alt="button" onMouseDown="buttonDepress('img4-10')" onMouseUp="soundsSelect('img4-10')" /></div>
+
+<div id="11"><img id="img4-11" src="img/buttonblue_v2.png" alt="button" onMouseDown="buttonDepress('img4-11')" onMouseUp="soundsSelect('img4-11')" /></div>
+<div id="12"><img id="img4-12" src="img/buttonblue_v2.png" alt="button" onMouseDown="buttonDepress('img4-12')" onMouseUp="soundsSelect('img4-12')" /></div>
+<div id="13"><img id="img4-13" src="img/buttonblue_v2.png" alt="button" onMouseDown="buttonDepress('img4-13')" onMouseUp="soundsSelect('img4-13')" /></div>
+
+<div id="14"><img id="img4-14" src="img/buttonblue_v2.png" alt="button" onMouseDown="buttonDepress('img4-14')" onMouseUp="soundsSelect('img4-14')" /></div>
+<div id="15"><img id="img4-15" src="img/buttonblue_v2.png" alt="button" onMouseDown="buttonDepress('img4-15')" onMouseUp="soundsSelect('img4-15')" /></div>
+
+<div id="16"><img id="img4-16" src="img/buttonblue_v2.png" alt="button" onMouseDown="buttonDepress('img4-16')" onMouseUp="soundsSelect('img4-16')" /></div>
+
+<!--End of Buttons-->
+</div>
+
+<div id="run">
+            <form id="runForm" action="javascript:runLoop()">
+            <div>
+            <input id="runButton" type="image" src="img/run-deactivated.png" alt="Click to run or stop." />
+            </div>
+            </form>
+        </div>
+
+        <div id="tempoBox" style="">
+        	<input id="tempoValue" type="text" value="120" onKeyPress="return numbersonly(event, false)" onBlur="tempoChange()" />bpm
+        </div>
+        
+        
+<!--End of Container-->
+</div>
+
+<!--AudioFiles-->
+<div class="nodisplay">
+<audio id="oh1" preload="auto" autobuffer> 
+  <source src="audio/OGG/Matches.ogg" />
+  <source src="audio/MP3/Matches.mp3" />
+  <source src="audio/WAV/Matches.wav" />
+   
+</audio>
+<audio id="oh2" preload="auto" autobuffer> 
+  <source src="audio/OGG/snapbeat.ogg" />
+  <source src="audio/MP3/snapbeat.mp3" />
+  <source src="audio/WAV/snapbeat.wav" />
+   
+</audio>
+<audio id="oh3" preload="auto" autobuffer> 
+  <source src="audio/OGG/CultureShock.ogg" />
+  <source src="audio/MP3/CultureShock.mp3" />
+  <source src="audio/WAV/CultureShock.wav" />
+   
+</audio>
+<audio id="oh4" preload="auto" autobuffer> 
+  <source src="audio/OGG/Galactic.ogg" />
+  <source src="audio/MP3/Galactic.mp3" />
+  <source src="audio/WAV/Galactic.wav" />
+   
+</audio>
+<audio id="oh5" preload="auto" autobuffer> 
+  <source src="audio/OGG/LittleDrum.ogg" />
+  <source src="audio/MP3/LittleDrum.mp3" />
+  <source src="audio/WAV/LittleDrum.wav" />
+   
+</audio>
+<audio id="oh6" preload="auto" autobuffer> 
+  <source src="audio/OGG/TechWater.ogg" />
+  <source src="audio/MP3/TechWater.mp3" />
+  <source src="audio/WAV/TechWater.wav" />
+   
+</audio>
+<audio id="oh7" preload="auto" autobuffer> 
+  <source src="audio/OGG/TicketBarrier.ogg" />
+  <source src="audio/MP3/TicketBarrier.mp3" />
+  <source src="audio/WAV/TicketBarrier.wav" />
+   
+</audio>
+<audio id="oh8" preload="auto" autobuffer> 
+  <source src="audio/OGG/MoonShimmer.ogg" />
+  <source src="audio/MP3/MoonShimmer.mp3" />
+  <source src="audio/WAV/MoonShimmer.wav" />
+   
+</audio>
+<audio id="oh9" preload="auto" autobuffer> 
+  <source src="audio/OGG/LittleDrumRub2.ogg" />
+  <source src="audio/MP3/LittleDrumRub2.mp3" />
+  <source src="audio/WAV/LittleDrumRub2.wav" />
+   
+</audio>
+<audio id="oh10" preload="auto" autobuffer> 
+  <source src="audio/OGG/granulartapping-1.ogg" />
+  <source src="audio/MP3/granulartapping-1.mp3" />
+  <source src="audio/WAV/granulartapping-1.wav" />
+   
+</audio>
+<audio id="oh11" preload="auto" autobuffer> 
+  <source src="audio/OGG/SkypeBeatSectionA.ogg" />
+  <source src="audio/MP3/SkypeBeatSectionA.mp3" />
+  <source src="audio/WAV/SkypeBeatSectionA.wav" />
+   
+</audio>
+<audio id="oh12" preload="auto" autobuffer> 
+  <source src="audio/OGG/ThunderTube1.ogg" />
+  <source src="audio/MP3/ThunderTube1.mp3" />
+  <source src="audio/WAV/ThunderTube1.wav" />
+   
+</audio>
+<audio id="oh13" preload="auto" autobuffer> 
+  <source src="audio/OGG/ChairLegsKeys-1.ogg" />
+  <source src="audio/MP3/ChairLegsKeys-1.mp3" />
+  <source src="audio/WAV/ChairLegsKeys-1.wav" />
+   
+</audio>
+<audio id="oh14" preload="auto" autobuffer> 
+  <source src="audio/OGG/granulartapping.ogg" />
+  <source src="audio/MP3/granulartapping.mp3" />
+  <source src="audio/MP3/granulartapping.wav" />
+   
+</audio>
+<audio id="oh15" preload="auto" autobuffer> 
+  <source src="audio/OGG/TrainDoorAutomatic.ogg" />
+  <source src="audio/MP3/TrainDoorAutomatic.mp3" />
+  <source src="audio/MP3/TrainDoorAutomatic.wav" />
+   
+</audio>
+<audio id="oh16" preload="auto" autobuffer> 
+  <source src="audio/OGG/PlasticSheetWobble.ogg" />
+  <source src="audio/MP3/PlasticSheetWobble.mp3" />
+  <source src="audio/MP3/PlasticSheetWobble.wav" />
+   
+</audio>
+
+</div>
+<div id="footer">
+<img id="logoft" src="SoundAlchemistLogoConcept.png" height=35px />
+<div id="footerinfo"><span class="info"><a href=javascript:openAbout()>About SonicAlchemist</a></span></div>
+</div>
+<div id="about">
+<p>Welcome to SonicAlchemist!</p>
+
+<p>To start making sounds click any of the buttons in the central frame to activate them, then press the play button located in the toolbar. During playback you can also activate or deactivate sounds, without having to restart the audio.</p>
+
+<p>To add a sonic ambiance, click on any of the four circular buttons representing fire, water, earth and air. </p>
+
+<p>To stop the audio, click the stop button located in the toolbar. </p>
+
+<p>If you would like to export your audio, we recommend that you download Audio Hijack Pro [http://www.rogueamoeba.com/audiohijackpro/] (Mac only), a free application that allows you to record audio from your browser. We are currently not aware of a free alternative for Windows users, but suggest Total Recorder [http://www.highcriteria.com] as the best alternative.</p>
+
+
+
+<p>If you would like to contribute to the constantly-changing sound bank, Tweet us a link to your sample @sonicalchemist1. We recommend hosting your sample on SoundCloud, which can produce a download link for you. We will then upload your sample to the SonicAlchemist SoundCloud account (SonicAlchemistUK) in order to be used with the site.</p>
+
+<p>In submitting your samples you agree that they are your own work, and may be used by others in any way they see fit. SonicAlchemist is not liable for any copyright infringement or damages caused by users of the site.</p>
+
+<a id="closeabout" href=javascript:closeAbout()>Close</a>
+</br></br>
+
+</div>
+</body>
+</html>
